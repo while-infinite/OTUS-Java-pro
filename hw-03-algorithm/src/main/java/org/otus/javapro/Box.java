@@ -13,6 +13,8 @@ import java.util.List;
 @ToString
 public class Box<F extends Fruit> {
 
+    private static final String CANT_BE_NULL = "Compared box can't be null";
+
     private List<F> fruits;
 
     public Box() {
@@ -29,13 +31,19 @@ public class Box<F extends Fruit> {
                 .sum();
     }
 
-    public <T extends Fruit> boolean compare(Box<T> box) {
+    public boolean compare(Box<?> box) {
+        if(box == null)
+            throw new IllegalArgumentException(CANT_BE_NULL);
         return this.weight() == box.weight();
     }
 
     public void pourOver(Box<? super F> otherBox) {
-        fruits.forEach(otherBox::addFruit);
-        fruits.clear();
+        if(otherBox == null)
+            throw new IllegalArgumentException(CANT_BE_NULL);
+        if(otherBox != this) {
+            fruits.forEach(otherBox::addFruit);
+            fruits.clear();
+        }
     }
 
 }
