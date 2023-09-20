@@ -1,4 +1,5 @@
 rootProject.name = 'otus-java-pro'
 include 'hw01-gradle'
 include 'hw-03-algorithm'
+include 'hw-06-reflection'
 
