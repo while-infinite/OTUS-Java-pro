@@ -1,4 +1,4 @@
-rootProject.name = 'otus-java-pro'
+rootProject.name = 'Otus-Java-pro'
 include 'hw01-gradle'
 include 'hw-03-algorithm'
 include 'hw-06-reflection'
