@@ -1,18 +1,18 @@
 package org.otus.javapro;
 
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.otus.javapro.annotation.After;
+import org.otus.javapro.annotation.Before;
+import org.otus.javapro.annotation.Test;
 
 public class AnnotationDemoTest {
 
-    @BeforeEach
+    @Before
     public void beforeMethod() {
         System.out.println("invoke beforeMethod()");
     }
 
-    @AfterEach
+    @After
     public void afterMethod() {
         System.out.println("invoke afterMethod()");
     }

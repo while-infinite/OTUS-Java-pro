@@ -1,11 +1,11 @@
 package org.otus.javapro;
 
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
+import org.otus.javapro.annotation.After;
+import org.otus.javapro.annotation.Before;
+import org.otus.javapro.annotation.Test;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
@@ -46,7 +46,7 @@ public class UnitTestRunner {
             if(method.getAnnotations().length == 0)
                 continue;
             Annotation beforeAnnotation = method.getAnnotations()[0];
-            if(beforeAnnotation instanceof BeforeEach)
+            if(beforeAnnotation instanceof Before)
                 method.invoke(demoTest);
         }
     }
@@ -57,7 +57,7 @@ public class UnitTestRunner {
             if(method.getAnnotations().length == 0)
                 continue;
             Annotation beforeAnnotation = method.getAnnotations()[0];
-            if(beforeAnnotation instanceof AfterEach)
+            if(beforeAnnotation instanceof After)
                 method.invoke(demoTest);
         }
     }
