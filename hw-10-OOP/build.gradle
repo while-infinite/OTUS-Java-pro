@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.otus.javapro'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+ext {
+    set('lombokVersion', '1.18.20')
+}
+
+dependencies {
+    implementation "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
