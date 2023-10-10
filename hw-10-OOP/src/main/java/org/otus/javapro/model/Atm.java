@@ -14,12 +14,11 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 public class Atm {
-    private Hundred hundred;
-    private TwoHundred twoHundred;
-    private FiveHundred fiveHundred;
-    private Thousand thousand;
-    private TwoThousand twoThousand;
-    private FiveThousand fiveThousand;
+    private BanknoteCell fifty;
+    private BanknoteCell oneHundred;
+    private BanknoteCell fiveHundred;
+    private BanknoteCell oneThousand;
+    private BanknoteCell fiveThousand;
 
 
     public Long getTotalSum() {
@@ -31,8 +30,8 @@ public class Atm {
     public Long extractBanknotes(Long amount) {
         if(amount > this.getTotalSum())
             throw new RuntimeException("Amount is exceed the total sum of banknotes in cell");
-        if(amount % 100 != 0)
-            throw new RuntimeException("The banknote must be a multiple of 100");
+        if(amount % 50 != 0)
+            throw new RuntimeException("The banknote must be a multiple of 50");
         var cells = this.getListOfCells();
         long remainAmount = amount;
         for (BanknoteCell cell : cells) {
@@ -48,11 +47,10 @@ public class Atm {
     private List<BanknoteCell> getListOfCells() {
         LinkedList<BanknoteCell> cells = new LinkedList<>();
         cells.add(fiveThousand);
-        cells.add(twoThousand);
-        cells.add(thousand);
+        cells.add(oneThousand);
         cells.add(fiveHundred);
-        cells.add(twoHundred);
-        cells.add(hundred);
+        cells.add(oneHundred);
+        cells.add(fifty);
         return cells;
     }
 

@@ -26,27 +26,25 @@ public class Client {
         log.info(() ->"-".repeat(150));
         log.info(() -> "Total sum after extracting banknotes " + atm.getTotalSum());
         log.info(() ->"-".repeat(150));
-        log.info(() -> "Total sum of 100 - " + atm.getHundred().getTotalSum());
-        log.info(() -> "Total sum of 200 - " + atm.getTwoHundred().getTotalSum());
+        log.info(() -> "Total sum of 50 - " + atm.getFifty().getTotalSum());
+        log.info(() -> "Total sum of 100 - " + atm.getOneHundred().getTotalSum());
         log.info(() -> "Total sum of 500 - " + atm.getFiveHundred().getTotalSum());
-        log.info(() -> "Total sum of 1000 - " + atm.getThousand().getTotalSum());
+        log.info(() -> "Total sum of 1000 - " + atm.getOneThousand().getTotalSum());
         log.info(() -> "Total sum of 5000 - " + atm.getFiveThousand().getTotalSum());
     }
 
     private static void fillAtm() {
-        Hundred hundredCell = new Hundred(List.of(100, 100, 100));
-        TwoHundred twoHundred = new TwoHundred(List.of(200, 200, 200));
-        FiveHundred fiveHundred = new FiveHundred(List.of(500, 500, 500));
-        Thousand thousand = new Thousand(List.of(1000, 1000, 1000));
-        TwoThousand twoThousand = new TwoThousand(List.of(2000, 2000, 2000));
-        FiveThousand fiveThousand = new FiveThousand(List.of(5000, 5000, 5000));
+        BanknoteCell fifty = new BanknoteCell(List.of(50, 50, 50), Banknote.FIFTY);
+        BanknoteCell oneHundred = new BanknoteCell(List.of(100, 100, 100), Banknote.ONE_HUNDRED);
+        BanknoteCell fiveHundred = new BanknoteCell(List.of(500, 500, 500), Banknote.FIVE_HUNDRED);
+        BanknoteCell oneThousand = new BanknoteCell(List.of(1000, 1000, 1000), Banknote.ONE_THOUSAND);
+        BanknoteCell fiveThousand = new BanknoteCell(List.of(5000, 5000, 5000), Banknote.FIVE_THOUSAND);
 
         atm = Atm.builder()
-                .hundred(hundredCell)
-                .twoHundred(twoHundred)
+                .fifty(fifty)
+                .oneHundred(oneHundred)
                 .fiveHundred(fiveHundred)
-                .thousand(thousand)
-                .twoThousand(twoThousand)
+                .oneThousand(oneThousand)
                 .fiveThousand(fiveThousand)
                 .build();
     }
