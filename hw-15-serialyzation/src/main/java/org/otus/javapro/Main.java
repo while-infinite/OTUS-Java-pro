@@ -36,25 +36,6 @@ public class Main {
         //Write to json file new list structure
         SmsFilter readFromJson = JsonSerializer.readJson(SmsFilter.class, JSON_FILTERED_SMS_PATH);
         System.out.println(readFromJson);
-
-        //PROTOBUF СЕРИАЛИЗАЦИЯ
-//        try {
-//            FileOutputStream output = new FileOutputStream("protobuf.bin");
-//            SmsFilterOuterClass.SmsFilter filter = SmsFilterOuterClass.SmsFilter.newBuilder()
-//                    .addAllChatSessionFilter(filteredMessages)
-//                    .build();
-//            filter.toByteArray();
-//            output.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        try {
-//            FileInputStream input = new FileInputStream("protobuf.bin");
-//            example.SmsFilterOuterClass.SmsFilter filterOuter = example.SmsFilterOuterClass.SmsFilter.newBuilder()
-//                    .build();
-//             SmsFilter filter = filterOuter.parseFrom(input);
-//        }
     }
 
     private static Map<String, List<MessageFilter>> toGroupedMessageFilter(List<Message> messages) {
