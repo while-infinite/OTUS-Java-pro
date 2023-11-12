@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+message SmsFilter {
+  repeated ChatSessionFilter chat_session_filter = 1;
+}
+
+message ChatSessionFilter {
+  string chat_identifier = 1;
+  repeated string last = 2;
+  repeated MessageFilter ch = 3;
+  map<string, google.protobuf.ListValue> messages = 4;
+}
+
+message MessageFilter {
+  google.protobuf.Timestamp send_date = 1;
+  string belong_number = 2;
+  string text = 3;
+}
