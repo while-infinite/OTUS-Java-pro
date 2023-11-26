@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal Form</title>
+</head>
+<body>
+<h1>Withdrawal Form</h1>
+<form th:method="POST" th:action="@{/card/withdrawal}" th:object="${getMoneyDto}">
+    <label for="number" style="font-size: 20px;">Enter number: </label><br>
+    <input type="text" th:field="*{number}" id="number"/><br><br>
+    <label for="pin" style="font-size: 20px;">Enter pin: </label><br>
+    <input type="text" th:field="*{pin}" id="pin"/><br><br>
+    <label for="amount" style="font-size: 20px;">Amount:</label><br>
+    <input type="text" th:field="*{amount}" id="amount"/><br><br>
+    <input type="submit" style="font-size: 20px;" value="Withdraw money"><br><br>
+</form>
+<a href="/card" style="font-size: 20px;">Back to Main Page</a>
+</body>
+</html>
+
+

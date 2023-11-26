@@ -14,8 +14,6 @@ dependencies {
     implementation("org.flywaydb:flyway-core:9.20.0")
     implementation("com.zaxxer:HikariCP:5.0.1")
     implementation('org.postgresql:postgresql:42.5.4')
-    testImplementation "org.assertj:assertj-core"
-    testImplementation "org.mockito:mockito-junit-jupiter"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }

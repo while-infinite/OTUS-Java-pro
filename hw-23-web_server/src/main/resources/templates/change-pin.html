@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change PIN successful</title>
+</head>
+<body>
+<h1>Change PIN result</h1>
+<div class="container">
+    <div class="row" th:if="${isChanged == false}">
+        <p style="font-size: 20px;">Pin change failed</p><br><br>
+    </div>
+    <div class="row" th:if="${isChanged == true}">
+    <p style="font-size: 20px;">Pin successfully changed</p><br><br>
+</div>
+</div>
+<a href="/card" style="font-size: 20px;">Back to Main Page</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Form</title>
+</head>
+<body>
+<h1>Balance Form</h1>
+<form th:method="GET" th:action="@{/card/balance}" th:object="${getBalanceDto}">
+    <label for="number" style="font-size: 20px;">Enter number: </label><br>
+    <input type="text" th:field="*{number}" id="number"/><br><br>
+    <label for="number" style="font-size: 20px;">Enter pin: </label><br>
+    <input type="text" th:field="*{pin}" id="pin"/><br><br>
+    <input type="submit" style="font-size: 20px;" value="Get balance"><br><br>
+</form>
+<a href="/card" style="font-size: 20px;">Back to Main Page</a>
+</body>
+</html>
+

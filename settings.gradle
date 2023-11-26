@@ -8,4 +8,5 @@ include 'hw-15-serialyzation'
 include 'hw-20-jpql'
 include 'hw-17-jdbc'
 include 'hw-21-cache'
+include 'hw-23-wev_server'
 

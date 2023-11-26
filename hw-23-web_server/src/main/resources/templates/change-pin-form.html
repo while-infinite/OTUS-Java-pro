@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change PIN Form</title>
+</head>
+<body>
+<h1>Change PIN Form</h1>
+<form th:method="POST" th:action="@{/card/change-pin}" th:object="${pinDto}">
+    <label for="number" style="font-size: 20px;">Number:</label><br>
+    <input type="text" th:field="*{number}" id="number"><br><br>
+    <label for="oldPin" style="font-size: 20px;">Old PIN:</label><br>
+    <input type="text" th:field="*{oldPin}" id="oldPin"><br><br>
+    <label for="newPin" style="font-size: 20px;">New PIN:</label><br>
+    <input type="text" th:field="*{newPin}" id="newPin"><br><br>
+    <input type="submit" style="font-size: 20px;" value="Change PIN"><br><br>
+</form>
+<a href="/card" style="font-size: 20px;">Back to Main Page</a>
+</body>
+</html>
