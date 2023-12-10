@@ -29,20 +29,6 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
         Set<Class<?>> classes =  reflections.getSubTypesOf(Object.class);
         Class<?>[] classArr = classes.toArray(new Class<?>[0]);
         processConfig(classArr);
-//        classes.forEach(System.out::println);
-//        Store store = reflections.getStore();
-//        Collection<Map<String, Set<String>>> values = store.values();
-//        String[] mapValues = values.stream()
-//                .flatMap(map -> map.values().stream())
-//                .flatMap(Set::stream)
-//                .toArray(String[]::new);
-//        Class<?>[] classes = Arrays.stream(mapValues)
-//                .map(clazzStr -> {
-//                    var split = clazzStr.split("\\.");
-//                    return (Class<?>)split[split.length - 1] + ".class";
-//                })
-//                .toArray(Class[]::new);
-//        processConfig(classes);
     }
 
     private void processConfig(Class<?>... configClasses) {
@@ -63,9 +49,9 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
     @Override
     public <C> C getAppComponent(Class<C> componentClass) {
         return (C) appComponents.stream()
-                .filter(component -> componentClass.isInstance(component))
+                .filter(componentClass::isInstance)
                 .findFirst()
-                .orElseGet(null);
+                .orElse(null);
     }
 
     @Override
