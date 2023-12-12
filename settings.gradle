@@ -10,4 +10,5 @@ include 'hw-17-jdbc'
 include 'hw-21-cache'
 include 'hw-23-web-server'
 include 'hw-24-DI'
+include 'hw-28-spring-data-jdbc'
 
