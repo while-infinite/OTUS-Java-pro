@@ -1,0 +1,15 @@
+server:
+  port:
+    8081
+  servlet:
+    context-path: /app
+  ssl:
+    key-store: classpath:https1.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: https1
+    key-password: password
+    enabled: true
+
+
+

@@ -1,0 +1,20 @@
+server:
+  port:
+    8082
+  servlet:
+    context-path: /app
+  ssl:
+    key-store: classpath:https2.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: https2
+    key-password: password
+    enabled: true
+  truststore:
+    store: classpath:truststore.p12
+    password: password
+
+
+
+
+
