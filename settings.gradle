@@ -16,4 +16,5 @@ include 'hw-30-https:https-1'
 findProject(':hw-30-https:https-1')?.name = 'https-1'
 include 'hw-30-https:https-2'
 findProject(':hw-30-https:https-2')?.name = 'https-2'
+include 'hw-33-executors'
 
